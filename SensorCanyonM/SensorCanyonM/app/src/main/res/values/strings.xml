@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BikeCanyon</string>
+    <string name="textview">0.0</string>
+    <string name="pulso">pulso</string>
+    <string name="zona">Z0</string>
+    <string name="menos">menos</string>
+    <string name="mas">mas</string>
+    <string name="CONEXION">conexion</string>
+    <string name="Inicio">Iniciar</string>
+    <string name="Fin">Finalizar</string>
+</resources>

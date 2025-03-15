@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/t"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/redondo"
+    tools:context=".MainActivity"
+    tools:ignore="MissingClass">
+
+
+    <TextView
+        android:id="@+id/t_pulsacion"
+        android:layout_width="171dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+
+        android:background="@drawable/redondo"
+        android:foregroundTint="@color/white"
+        android:text="0.0"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="80sp"
+        app:layout_constraintStart_toEndOf="@+id/t_zona"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_peso"
+        android:layout_width="57dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="224dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="88"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/t_altitud"
+        android:layout_width="132dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/redondo"
+        android:text="@android:string/yes"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_negativo" />
+
+    <TextView
+        android:id="@+id/t_peso"
+        android:layout_width="152dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="232dp"
+        android:text="Peso Ciclista + Bici (kg):"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/t_negativo"
+        android:layout_width="91dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/redondo"
+        android:text="@string/menos"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_positivo" />
+
+    <TextView
+        android:id="@+id/t_positivo"
+        android:layout_width="91dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/redondo"
+        android:text="@string/mas"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_inicio" />
+
+    <TextView
+        android:id="@+id/t_distancia"
+        android:layout_width="168dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="372dp"
+        android:layout_marginTop="224dp"
+        android:background="@drawable/redondo"
+        android:text="@android:string/yes"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/t_longitud"
+        android:layout_width="90dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Longitud"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/t_latitud"
+        app:layout_constraintTop_toBottomOf="@+id/t_mensaje" />
+
+    <com.github.anastr.speedviewlib.ProgressiveGauge
+        android:id="@+id/progressiveGauge"
+        android:layout_width="175dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/redondo"
+        app:layout_constraintStart_toEndOf="@+id/b_inicio"
+        app:layout_constraintTop_toBottomOf="@+id/t_pulsacion"
+        app:sv_speedTextColor="@android:color/transparent"
+        app:sv_unitTextColor="@android:color/transparent" />
+
+    <Button
+        android:id="@+id/b_conexion"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="109dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="368dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/holo_green_dark"
+        android:text="@string/CONEXION"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_velocidad" />
+
+    <EditText
+        android:id="@+id/et_diametro"
+        android:layout_width="57dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="168dp"
+        android:editable="true"
+        android:ems="10"
+        android:inputType="text"
+        android:text="29"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+
+        android:id="@+id/t_zona"
+        android:layout_width="119dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/redondo"
+        android:gravity="center_vertical"
+        android:text="@string/zona"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="70sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_configuracion"
+        android:layout_width="121dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="492dp"
+        android:layout_marginTop="128dp"
+        android:background="@android:color/holo_orange_light"
+        android:text="Configuracion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/t_latitud"
+        android:layout_width="91dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Latitud"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_mensaje"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/t_mensaje"
+        android:layout_width="241dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/redondo"
+        android:text="POTENCIA"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/t_altitud"
+        app:layout_constraintTop_toBottomOf="@+id/t_distancia" />
+
+    <TextView
+        android:id="@+id/t_nombre"
+        android:layout_width="83dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="52dp"
+        android:text="NOMBRE:"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/t_edad"
+        android:layout_width="83dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="112dp"
+        android:text="EDAD:"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/t_cadencia"
+        android:layout_width="111dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="228dp"
+        android:background="@drawable/redondo"
+        android:text="CAD"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_nombre"
+        android:layout_width="204dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="52dp"
+        android:editable="true"
+        android:ems="10"
+        android:inputType="text"
+        android:text="PAVEL"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_edad"
+        android:layout_width="49dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="112dp"
+        android:editable="true"
+        android:ems="10"
+        android:inputType="text"
+        android:text="53"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/t_unidad"
+        android:layout_width="49dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="4dp"
+        android:text="Km/h"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/t_velocidad"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.112" />
+
+    <TextView
+        android:id="@+id/t_velocidad"
+        android:layout_width="162dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/redondo"
+        android:text="@string/textview"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        app:layout_constraintStart_toEndOf="@+id/t_pulsacion"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/t_diametro"
+        android:layout_width="83dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="168dp"
+        android:text=" DIAMETRO RUEDA:"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/b_inicio"
+        android:layout_width="109dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/design_default_color_error"
+        android:text="@string/Inicio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_zona" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

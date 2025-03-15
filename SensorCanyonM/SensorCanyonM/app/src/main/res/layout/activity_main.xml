@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:drawable/dark_header"
+    tools:context=".MainActivity"
+    tools:ignore="MissingClass">
+
+    <TextView
+        android:id="@+id/t_pulsacion"
+        android:layout_width="229dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:drawable/dark_header"
+        android:foregroundTint="@color/white"
+        android:text="Hello World!"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="80sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.github.anastr.speedviewlib.ImageSpeedometer
+        android:id="@+id/imageSpeedometer"
+        android:layout_width="175dp"
+        android:layout_height="172dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/t_pulsacion"
+        app:layout_constraintTop_toTopOf="parent"
+        app:sv_image="@drawable/image_speedometer"
+        app:sv_indicator="NeedleIndicator"
+        app:sv_speedTextColor="@android:color/holo_orange_light"
+        app:sv_unitTextColor="@android:color/holo_orange_light" />
+
+    <com.github.anastr.speedviewlib.ProgressiveGauge
+        android:id="@+id/progressiveGauge"
+        android:layout_width="218dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_pulsacion"
+        app:sv_speedTextColor="@android:color/transparent"
+        app:sv_unitTextColor="@android:color/transparent" />
+
+    <TextView
+        android:id="@+id/t_velocidad"
+        android:layout_width="172dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="52dp"
+        android:text="@string/textview"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toEndOf="@+id/progressiveGauge"
+        app:layout_constraintTop_toBottomOf="@+id/imageSpeedometer"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/t_altitud"
+        android:layout_width="117dp"
+        android:layout_height="48dp"
+        android:text="@android:string/yes"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toEndOf="@+id/imageSpeedometer"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/t_distancia"
+        android:layout_width="114dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
+        android:text="@android:string/yes"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toEndOf="@+id/imageSpeedometer"
+        app:layout_constraintTop_toBottomOf="@+id/t_altitud" />
+
+    <TextView
+        android:id="@+id/t_cvelocidad"
+        android:layout_width="116dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="80dp"
+        android:text="@android:string/yes"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintStart_toEndOf="@+id/imageSpeedometer"
+        app:layout_constraintTop_toBottomOf="@+id/t_distancia"
+        app:layout_constraintVertical_bias="0.048" />
+
+    <Button
+        android:id="@+id/b_conexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONEXION"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toEndOf="@+id/t_velocidad"
+        app:layout_constraintTop_toBottomOf="@+id/t_cvelocidad"
+        app:layout_constraintVertical_bias="0.089" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
