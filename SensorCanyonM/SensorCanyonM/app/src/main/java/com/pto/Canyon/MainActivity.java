@@ -748,6 +748,9 @@ private BluetoothGattCallback mGattCallbackCA = new BluetoothGattCallback() {
             }
         });
 
+        // Inicializar MqttManager
+        mqttManager = new MqttManager(this);
+        mqttManager.connect();
     }
     public void subscribeTopic(String topic) {
         try {
@@ -797,7 +800,9 @@ private BluetoothGattCallback mGattCallbackCA = new BluetoothGattCallback() {
     protected void onDestroy() {
         super.onDestroy();
         stopClient();
-
+        if (mqttManager != null) {
+            mqttManager.disconnect();
+        }
     }
 
     @SuppressLint("MissingSuperCall")
@@ -978,9 +983,28 @@ private BluetoothGattCallback mGattCallbackCA = new BluetoothGattCallback() {
             @Override
             public void run() {
                 grabar_nuevo("");//llamamos nuestro metodo
-                handler.postDelayed(this,2000);//se ejecutara cada 1 segundos
+                
+                // Enviar datos por MQTT
+                if (mqttManager != null) {
+                    mqttManager.publishData(
+                        textZona.getText().toString(),
+                        textPulsos.getText().toString(),
+                        textVelocidad.getText().toString(),
+                        textAltitud.getText().toString(),
+                        txtDistancia.getText().toString(),
+                        txtLatitud.getText().toString(),
+                        txtLongitud.getText().toString(),
+                        txtCadencia.getText().toString(),
+                        etEdad.getText().toString(),
+                        etNombre.getText().toString(),
+                        etDiametro.getText().toString(),
+                        txtMensaje.getText().toString()
+                    );
+                }
+                
+                handler.postDelayed(this,2000);//se ejecutara cada 2 segundos
             }
-        },1000);//empezara a ejecutarse después de 5 milisegundos
+        },1000);//empezara a ejecutarse después de 1 segundo
     }
     private void ejecutarPotencia(){
         final Handler handler= new Handler();
