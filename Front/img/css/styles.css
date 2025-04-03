@@ -1,0 +1,276 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+}
+
+/* Navegación */
+.navbar {
+    background-color: #2c3e50;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo-container {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.navbar .logo-container img {
+    height: 40px;
+    width: auto;
+    margin-right: 1rem;
+    border-radius: 4px;
+}
+
+.navbar .logo-container .brand-name {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #34495e;
+}
+
+.navbar a.active {
+    background-color: #3498db;
+}
+
+/* Header con imagen de fondo */
+.page-header {
+    background-image: url('../img/descarga.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    position: relative;
+    margin-bottom: 2rem;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(44, 62, 80, 0.7);
+}
+
+.page-header .header-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Selector de sesión */
+.session-selector {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.session-selector h3 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.btn-group {
+    gap: 0.5rem;
+}
+
+/* Contenedores de gráficos */
+.charts {
+    margin-top: 2rem;
+}
+
+.charts.d-none {
+    display: none;
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.chart-container h3 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Contenedor de datos en tiempo real */
+.real-time-container {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.real-time-container:not(.d-none) {
+    opacity: 1;
+}
+
+/* Tarjetas de datos */
+.data-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 100%;
+    transition: transform 0.2s;
+}
+
+.data-card:hover {
+    transform: translateY(-2px);
+}
+
+.data-card h4 {
+    color: #2c3e50;
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.data-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.data-zone {
+    font-size: 1.1rem;
+    color: #666;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    background: #f8f9fa;
+    display: inline-block;
+}
+
+.data-coordinates {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+.data-coordinates span {
+    display: inline-block;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* Mensajes de carga y error */
+.loading-message {
+    text-align: center;
+    padding: 1.5rem;
+    color: #666;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.error-message {
+    color: #dc3545;
+    text-align: center;
+    padding: 1.5rem;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .container {
+        padding: 0.5rem;
+        margin: 1rem auto;
+    }
+    
+    .chart-container {
+        height: 300px;
+        padding: 1rem;
+    }
+    
+    .data-card {
+        padding: 1rem;
+    }
+    
+    .data-value {
+        font-size: 1.5rem;
+    }
+    
+    .data-coordinates {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-group .btn {
+        margin-bottom: 0.5rem;
+    }
+} 
