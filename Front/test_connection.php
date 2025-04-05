@@ -38,7 +38,7 @@ try {
 
         // Mostrar algunos datos de ejemplo
         $stmt = $pdo->prepare("
-            SELECT fecha_hora, pulsaciones, velocidad, altitud, latitud, longitud, cadencia, potencia 
+            SELECT fecha_hora, pulsaciones, velocidad, altitud, latitud, longitud, cadencia, potencia, zona_esfuerzo 
             FROM registros 
             WHERE id_sesion = ? 
             LIMIT 3
@@ -53,7 +53,8 @@ try {
                  ", Velocidad: {$record['velocidad']}" .
                  ", Altitud: {$record['altitud']}" .
                  ", Cadencia: {$record['cadencia']}" .
-                 ", Potencia: {$record['potencia']}\n";
+                 ", Potencia: {$record['potencia']}" .
+                 ", Zona: {$record['zona_esfuerzo']}\n";
         }
     }
 

@@ -44,7 +44,8 @@ try {
             altitud,
             pulsaciones as pulsos,
             cadencia,
-            potencia
+            potencia,
+            zona_esfuerzo
         FROM registros 
         WHERE id_sesion = ?";
     
@@ -89,6 +90,9 @@ try {
             }, $data),
             'potencia' => array_map(function($point) {
                 return floatval($point['potencia']);
+            }, $data),
+            'zona_esfuerzo' => array_map(function($point) {
+                return $point['zona_esfuerzo'];
             }, $data)
         ]
     ];

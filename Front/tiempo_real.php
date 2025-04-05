@@ -43,13 +43,13 @@ try {
     </style>
     <!-- Google Maps JavaScript API -->
     <script>
-        // Función que se llamará cuando la API de Google Maps esté lista
+        // Funci&oacute;n que se llamar&aacute; cuando la API de Google Maps est&eacute; lista
         function initGoogleMaps() {
-            // La API está cargada y disponible
+            // La API est&aacute; cargada y disponible
             initMap();
         }
 
-        // Función que se llamará si hay un error al cargar la API
+        // Funci&oacute;n que se llamar&aacute; si hay un error al cargar la API
         function handleGoogleMapsError() {
             console.error('Error al cargar Google Maps');
             document.getElementById('map').style.display = 'none';
@@ -78,9 +78,9 @@ try {
 
     <div class="container">
         <div class="session-selector">
-            <h3><i class="fas fa-bicycle"></i> Seleccionar Sesión Activa</h3>
+            <h3><i class="fas fa-bicycle"></i> Seleccionar Sesi&oacute;n Activa</h3>
             <select id="sessionSelect" class="form-select mb-3">
-                <option value="">Seleccione una sesión...</option>
+                <option value="">Seleccione una sesi&oacute;n...</option>
                 <?php foreach ($sessions as $session): ?>
                     <option value="<?php echo htmlspecialchars($session['id_sesion']); ?>">
                         <?php 
@@ -104,7 +104,7 @@ try {
             <div class="row">
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="data-card">
-                        <h4><i class="fas fa-heartbeat"></i> Frecuencia Cardíaca</h4>
+                        <h4><i class="fas fa-heartbeat"></i> Frecuencia Card&iacute;aca</h4>
                         <div class="data-value" id="heartRate">-- BPM</div>
                         <div class="data-zone" id="heartRateZone">Zona --</div>
                     </div>
@@ -131,10 +131,10 @@ try {
             <div class="row">
                 <div class="col-md-12 mb-4">
                     <div class="data-card">
-                        <h4><i class="fas fa-map-marker-alt"></i> Ubicación en Tiempo Real</h4>
+                        <h4><i class="fas fa-map-marker-alt"></i> Ubicaci&oacute;n en Tiempo Real</h4>
                         <div id="map-error">
                             <i class="fas fa-exclamation-triangle"></i> 
-                            No se pudo cargar el mapa. Por favor, verifica tu conexión a internet y recarga la página.
+                            No se pudo cargar el mapa. Por favor, verifica tu conexi&oacute;n a internet y recarga la p&aacute;gina.
                         </div>
                         <div id="map"></div>
                     </div>
@@ -165,12 +165,12 @@ try {
         // Inicializar el mapa
         function initMap() {
             try {
-                // Coordenadas iniciales (puedes ajustarlas según tu ubicación preferida)
-                const initialPosition = { lat: 19.4326, lng: -99.1332 }; // Ciudad de México como ejemplo
+                // Coordenadas iniciales (puedes ajustarlas seg&uacute;n tu ubicaci&oacute;n preferida)
+                const initialPosition = { lat: 19.4326, lng: -99.1332 }; // Ciudad de M&eacute;xico como ejemplo
                 map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 15,
                     center: initialPosition,
-                    mapTypeId: 'terrain', // Tipo de mapa más adecuado para ciclismo
+                    mapTypeId: 'terrain', // Tipo de mapa m&aacute;s adecuado para ciclismo
                     styles: [
                         {
                             featureType: "poi",
@@ -184,7 +184,7 @@ try {
                 marker = new google.maps.Marker({
                     position: initialPosition,
                     map: map,
-                    title: 'Posición del ciclista',
+                    title: 'Posici&oacute;n del ciclista',
                     icon: {
                         path: google.maps.SymbolPath.CIRCLE,
                         scale: 10,
@@ -205,7 +205,7 @@ try {
                     infoWindow.open(map, marker);
                 });
 
-                // Inicializar la línea de ruta
+                // Inicializar la l&iacute;nea de ruta
                 routePath = new google.maps.Polyline({
                     path: [],
                     geodesic: true,
@@ -221,17 +221,17 @@ try {
         }
 
         function getHeartRateZone(bpm) {
-            if (bpm < 123) return 'Zona 1 - Recuperación';
+            if (bpm < 123) return 'Zona 1 - Recuperaci&oacute;n';
             if (bpm < 143) return 'Zona 2 - Resistencia';
             if (bpm < 163) return 'Zona 3 - Tempo';
             if (bpm < 178) return 'Zona 4 - Umbral';
-            return 'Zona 5 - Máximo';
+            return 'Zona 5 - M&aacute;ximo';
         }
 
         function updateInfoWindowContent(lat, lng, altitude, speed) {
             const content = `
                 <div style="padding: 10px;">
-                    <h6 style="margin: 0 0 8px 0;"><i class="fas fa-info-circle"></i> Datos de Ubicación</h6>
+                    <h6 style="margin: 0 0 8px 0;"><i class="fas fa-info-circle"></i> Datos de Ubicaci&oacute;n</h6>
                     <p style="margin: 0 0 5px 0;"><strong>Latitud:</strong> ${lat.toFixed(6)}</p>
                     <p style="margin: 0 0 5px 0;"><strong>Longitud:</strong> ${lng.toFixed(6)}</p>
                     <p style="margin: 0 0 5px 0;"><strong>Altitud:</strong> ${altitude.toFixed(0)} m</p>
@@ -244,7 +244,7 @@ try {
         function startRealTimeUpdates() {
             const sessionId = document.getElementById('sessionSelect').value;
             if (!sessionId) {
-                alert('Por favor, seleccione una sesión');
+                alert('Por favor, seleccione una sesi&oacute;n');
                 return;
             }
 
@@ -302,7 +302,7 @@ try {
                             updateInfoWindowContent(lat, lng, altitude, speed);
                             infoWindow.open(map, marker);
 
-                            // Actualizar línea de ruta
+                            // Actualizar l&iacute;nea de ruta
                             routeCoordinates.push(newPosition);
                             if (routePath) {
                                 routePath.setPath(routeCoordinates);
