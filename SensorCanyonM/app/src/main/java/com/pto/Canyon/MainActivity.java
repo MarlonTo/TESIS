@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements IBaseGpsListener,
     //MAC de la banda anterior
     public static final String MAC_ADDRESS = "E0:13:76:E8:AE:C7";
     //MAC de la banda nueva
-    // public static final String MAC_ADDRESS = "E8:3E:7C:69:50:CF";
+    //public static final String MAC_ADDRESS = "E8:3E:7C:69:50:CF";
     //UUID del servicio
     public static final UUID UUID_SERVICE = UUID.fromString("00000180d-0000-1000-8000-00805f9b34fb");
     public static final UUID UUID_CHARACTERISTIC_CORAZON = UUID.fromString("000002a37-0000-1000-8000-00805f9b34fb");
@@ -76,6 +76,13 @@ public class MainActivity extends AppCompatActivity implements IBaseGpsListener,
     //----------------------------------------------------------
     //CYCPLUS CADENCIA
     public static final String MAC_ADDRESS_CA = "D7:08:28:30:DC:53";
+
+    //MAGENE VELOCIDAD
+    //public static final String MAC_ADDRESS_CV = "DD:EF:3F:E3:8A:98";
+    //----------------------------------------------------------
+    //MAGENE CADENCIA
+    //public static final String MAC_ADDRESS_CA = "D7:CD:93:0B:0E:75";
+
     //----------------------------------------------------------
     //UUID del servicio
     public static final UUID UUID_SERVICE_CV = UUID.fromString("000001816-0000-1000-8000-00805f9b34fb");
@@ -128,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements IBaseGpsListener,
     final String host = "tcp://186.4.224.175:1883";
     private String clientId = "SensorBike" + System.currentTimeMillis();
     private String userName="pavel";
-    private String passWord="2008P4P3lucho";
+    private String passWord="2008P4P3luch0";
     private String SUB_TOPIC ="mensajeBike";
     //----------------------------------------------------------
     private MqttAndroidClient mqttAndroidClient;
